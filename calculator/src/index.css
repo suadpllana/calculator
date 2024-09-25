@@ -1,0 +1,89 @@
+.container{
+  width: 40%;
+  margin-left: 30%;
+  background-color: gray;
+  height: 92vh;
+  border-radius: 35px;
+}
+.container input{
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(0, 0, 0);
+  height: 15%;
+  margin: none;
+  color: white;
+  font-size: 55px;
+}
+.buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 5px;
+}
+button{
+  border-radius: 50%;
+height: 110px;
+width: 115px;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+  background-color: rgba(245, 222, 179, 0.63);
+}
+.diffColor{
+  background-color: rgb(218, 146, 13);
+  color: white;
+}
+.navContainer{
+  background-color: cadetblue;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17%;    
+}
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+a:hover{
+  opacity: 0.7;
+}
+@media (max-width: 767px){
+
+
+  .container{
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      border-radius: 5px;
+  }
+  button{
+      height: 60px;
+      width: 70px;
+      gap: 0px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px){
+
+  .container{
+      width: 70%;
+      margin-left: 15%;
+      height: 70vh;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1232px){
+  .navContainer{
+      gap: 10%;
+  }
+  .container{
+      width: 50%;
+      height: 600px;
+  }
+  button{
+      height: 85px;
+      width: 85px;
+      gap: 0px;
+  }
+}
