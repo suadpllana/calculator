@@ -14,7 +14,7 @@ const Calculator = () => {
       inputRef.current.value = result.toFixed(2)
     }
     catch(err){
-      alert("Please finish your calculations")
+      alert("Something went wrong")
     }
   }
 function reset(){
