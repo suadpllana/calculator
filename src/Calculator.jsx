@@ -1,17 +1,19 @@
 import React from 'react'
-import {useRef} from "react"
+import {useRef, useState} from "react"
 
 const Calculator = () => {
   const inputRef = useRef()
+  const [result , setResult] = useState("")
 
   function calcInput(input){
     inputRef.current.value += input
-    console.log(inputRef)
+   
   }
   function calculate(){
     try{
-      const result = eval(inputRef.current.value)
-      inputRef.current.value = result.toFixed(2)
+      setResult(eval(inputRef.current.value))
+      
+     
     }
     catch(err){
       alert("Something went wrong")
@@ -20,10 +22,19 @@ const Calculator = () => {
 function reset(){
 inputRef.current.value = ``
 }
+function deleteLast(){
+  if(inputRef.current.value.length === 1){
+    reset()
+  }
+ const lastCharacter = inputRef.current.value.slice(0, -1);
+  console.log(lastCharacter)
+ setResult(lastCharacter)
+
+}
   return (
     <div>
           <div className="container">
-        <input ref={inputRef}  id="calculationInput" readOnly/>
+        <input value={result} ref={inputRef}  id="calculationInput" readOnly/>
         <div className="buttons">
             <button onClick={(input) => calcInput('+')} className="diffColor">+</button>
             <button onClick={(input) => calcInput('7')}>7</button>
@@ -41,7 +52,8 @@ inputRef.current.value = ``
             <button onClick={(input) => calcInput('0')}>0</button>
             <button onClick={(input) => calcInput('.')}>.</button>
             <button onClick={(input) => calculate()}>=</button>
-            <button onClick={(input) => reset()} className="diffColor">C</button>
+            <button onClick={ reset} className="diffColor">C</button>
+            <button onClick={deleteLast} className="diffColor">DE</button>
         </div>
     </div>
 
