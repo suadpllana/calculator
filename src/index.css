@@ -44,9 +44,13 @@ width: 115px;
   }
  
   button{
-      height: 50px;
-      width: 60px;
+    min-height: 75px;
+    min-width: 75px;
+      height: auto;
+      color: black;
+      width: auto;
       gap: 0px;
+      font-size: 45px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px){
@@ -55,6 +59,9 @@ width: 115px;
       width: 70%;
       margin-left: 15%;
       height: 70vh;
+  }
+  button{
+    font-size: 60px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1232px){
