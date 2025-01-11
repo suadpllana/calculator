@@ -32,7 +32,7 @@ function deleteLast(){
 
 }
   return (
-    <div>
+    <div className="calculator">
           <div className="container">
         <input value={result} ref={inputRef}  id="calculationInput" readOnly/>
         <div className="buttons">
@@ -51,6 +51,7 @@ function deleteLast(){
             <button onClick={(input) => calcInput('/')} className="diffColor">/</button>
             <button onClick={(input) => calcInput('0')}>0</button>
             <button onClick={(input) => calcInput('.')}>.</button>
+            <button onClick={(input) => calcInput('%')} className="diffColor">%</button>
             <button onClick={(input) => calculate()}>=</button>
             <button onClick={ reset} className="diffColor">C</button>
             <button onClick={deleteLast} className="diffColor">DE</button>
